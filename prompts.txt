@@ -1,0 +1,389 @@
+# Effective Prompts Collection for Script Generation and Code Refactoring
+
+## System Prompts
+
+### 1. Script Generation System Prompt (Python)
+
+```
+You are an expert Python developer specializing in automation testing and development tools.
+
+Your task is to generate clean, well-structured, production-ready code based on user requirements.
+
+GUIDELINES:
+1. Write clean, readable, and maintainable code
+2. Include proper error handling and logging
+3. Add comprehensive docstrings and comments
+4. Follow Python best practices (PEP 8, type hints)
+5. Structure code with proper separation of concerns
+6. Include import statements for all dependencies
+7. Add example usage when appropriate
+8. Consider edge cases and validation
+9. Use modern Python features (3.8+)
+10. Implement proper configuration management
+
+OUTPUT FORMAT:
+- Provide complete, runnable code
+- If multiple files are needed, clearly separate them with "=== FILENAME: <name> ==="
+- Include setup/installation instructions if needed
+- Add brief explanation of the solution approach
+
+Focus on creating production-ready code that can be used immediately without placeholder implementations.
+```
+
+### 2. Script Generation System Prompt (TypeScript)
+
+```
+You are an expert TypeScript developer with deep knowledge of modern JavaScript/TypeScript ecosystem.
+
+Your task is to generate clean, well-structured, production-ready TypeScript code based on user requirements.
+
+GUIDELINES:
+1. Use modern TypeScript features and best practices
+2. Implement proper type safety with strict typing
+3. Include comprehensive error handling and validation
+4. Add detailed JSDoc comments and type definitions
+5. Follow clean architecture principles
+6. Use appropriate design patterns
+7. Include proper dependency injection
+8. Implement logging and monitoring
+9. Use async/await for asynchronous operations
+10. Create reusable interfaces and types
+
+OUTPUT FORMAT:
+- Provide complete, compilable TypeScript code
+- If multiple files are needed, clearly separate them with "=== FILENAME: <n> ==="
+- Include package.json and tsconfig.json if needed
+- Add brief explanation of the solution approach
+
+Focus on creating enterprise-grade TypeScript code with proper typing and structure.
+```
+
+### 3. Code Refactoring System Prompt (Universal)
+
+```
+You are an expert code refactoring specialist with deep knowledge of software engineering best practices.
+
+Your task is to refactor messy, poorly structured code into clean, maintainable, professional-quality code.
+
+REFACTORING PRINCIPLES:
+1. **Structure & Organization**: Break down large functions/classes into smaller, focused units
+2. **Code Quality**: Eliminate code smells, improve readability, add proper error handling
+3. **Maintainability**: Apply SOLID principles, design patterns, and clean architecture
+4. **Documentation**: Add comprehensive docstrings, type hints, and meaningful comments
+5. **Performance**: Optimize where possible without sacrificing readability
+6. **Testing**: Make code more testable through dependency injection and modular design
+
+SPECIFIC REFACTORING RULES:
+✅ DO:
+- Preserve ALL existing functionality and behavior
+- Keep all real imports and dependencies intact
+- Split large files into logical modules when beneficial
+- Extract reusable components and utilities
+- Implement proper exception handling and logging
+- Add type hints and comprehensive documentation
+- Follow language conventions and best practices
+- Create configuration files for constants and settings
+- Use dependency injection for better testability
+
+❌ DON'T:
+- Create mock classes or placeholder implementations
+- Remove or change existing functionality
+- Add external dependencies not already present
+- Break backward compatibility
+- Create overly complex abstractions
+
+OUTPUT FORMAT:
+If splitting into multiple files, use "=== FILENAME: <n> ===" format.
+Provide import/export statements for file relationships.
+Include brief explanation of refactoring decisions.
+Maintain backward compatibility where possible.
+```
+
+## Example User Prompts for Script Generation
+
+### 1. Flaky Test Detector (Advanced Testing Feature)
+
+```
+Create a Python script that implements a comprehensive Flaky Test Detector for automation testing.
+
+REQUIREMENTS:
+- Analyze test execution histories from multiple sources (JSON, XML, CSV)
+- Identify tests with inconsistent pass/fail patterns using statistical analysis
+- Calculate flakiness percentage, confidence intervals, and trend analysis
+- Provide natural language explanations for flakiness causes (timing issues, environment, dependencies)
+- Generate detailed reports with suggested fixes and prioritization
+- Support configurable flakiness thresholds and detection algorithms
+- Include visualization of flaky test trends over time
+- Integrate with CI/CD systems for real-time monitoring
+- Support parallel processing for large test suites
+- Include machine learning predictions for future flakiness
+
+TECHNICAL SPECS:
+- Use pandas for data analysis
+- Implement statistical methods (moving averages, variance analysis)
+- Create modular architecture with plugin system
+- Include comprehensive logging and error handling
+- Support multiple output formats (JSON, HTML, PDF reports)
+- Add CLI interface with progress bars
+- Include example test data and usage scenarios
+
+The script should be production-ready, well-documented, and include unit tests.
+```
+
+### 2. Test Coverage Gap Analyzer (TypeScript)
+
+```
+Create a TypeScript application that implements an intelligent Test Coverage Gap Analyzer.
+
+REQUIREMENTS:
+- Parse coverage reports from multiple tools (Istanbul, Jest, Cypress)
+- Analyze application source code to identify critical paths
+- Use AST parsing to understand code complexity and risk levels
+- Identify untested functions, branches, and edge cases
+- Generate natural language suggestions for new tests with examples
+- Prioritize gaps by business impact and technical risk
+- Create interactive HTML reports with drill-down capabilities
+- Support integration with popular testing frameworks
+- Include code quality metrics (cyclomatic complexity, maintainability index)
+- Provide REST API for CI/CD integration
+
+TECHNICAL SPECS:
+- Use TypeScript with strict typing
+- Implement abstract syntax tree (AST) analysis
+- Create plugin architecture for different coverage tools
+- Use modern Node.js features (ES modules, top-level await)
+- Include comprehensive error handling and validation
+- Add progress tracking and cancellation support
+- Create responsive web interface using modern CSS
+- Include extensive unit and integration tests
+
+Deliver enterprise-grade code with proper documentation and examples.
+```
+
+### 3. Predictive Test Failure Forecasting
+
+```
+Create a Python machine learning system for Predictive Test Failure Forecasting in automation testing.
+
+REQUIREMENTS:
+- Collect and analyze historical test execution data
+- Implement multiple ML algorithms (Random Forest, XGBoost, Neural Networks)
+- Feature engineering from test metadata, code changes, environment factors
+- Predict test failure probability with confidence scores
+- Provide explanations for predictions (SHAP values, feature importance)
+- Generate early warning alerts for high-risk tests
+- Support real-time predictions via REST API
+- Include model training, validation, and retraining pipelines
+- Create comprehensive dashboards for monitoring predictions
+- Integrate with popular CI/CD platforms
+
+TECHNICAL SPECS:
+- Use scikit-learn, pandas, numpy for ML pipeline
+- Implement MLOps best practices (model versioning, monitoring)
+- Create modular architecture with clear separation of concerns
+- Include data preprocessing and feature selection modules
+- Add comprehensive logging and error handling
+- Support both batch and streaming predictions
+- Include model interpretability and explainability features
+- Create automated testing for ML components
+
+Provide production-ready MLOps solution with complete documentation.
+```
+
+### 4. Smart Test Script Modularization Tool
+
+```
+Create a TypeScript tool for Smart Test Script Modularization that automatically refactors test code.
+
+REQUIREMENTS:
+- Analyze existing test scripts to identify patterns and duplication
+- Use static code analysis to detect reusable components
+- Extract common functionality into shared modules
+- Generate page object models and utility functions
+- Create dependency graphs and impact analysis
+- Provide automated refactoring suggestions with previews
+- Support multiple test frameworks (Selenium, Playwright, Cypress)
+- Include code quality metrics and improvement tracking
+- Generate migration guides and documentation
+- Support batch processing of large test suites
+
+TECHNICAL SPECS:
+- Use TypeScript with advanced type definitions
+- Implement AST parsing and code transformation
+- Create plugin system for different test frameworks
+- Use worker threads for parallel processing
+- Include comprehensive validation and rollback mechanisms
+- Add visual diff tools for code changes
+- Create interactive CLI with progress tracking
+- Include extensive unit tests and integration tests
+
+Deliver a robust code analysis and refactoring tool.
+```
+
+## Example User Prompts for Code Refactoring
+
+### 1. Legacy Test Automation Script
+
+```
+Please refactor this legacy Python test automation script. It's a monolithic file with poor structure, no error handling, and mixed responsibilities.
+
+CURRENT ISSUES:
+- Single 800-line function with everything mixed together
+- No error handling or logging
+- Hard-coded values throughout
+- No separation between test logic and utilities
+- Duplicate code for similar test scenarios
+- No configuration management
+- Poor variable naming and no documentation
+
+REFACTORING GOALS:
+- Split into logical modules (tests, page objects, utilities, config)
+- Implement proper test framework structure
+- Add comprehensive error handling and logging
+- Extract configuration into separate files
+- Create reusable page object models
+- Add type hints and documentation
+- Implement proper test data management
+- Make code more maintainable and testable
+
+[Insert messy code here]
+
+Please provide a clean, professional refactoring that follows Python testing best practices.
+```
+
+### 2. Complex TypeScript Application
+
+```
+Refactor this TypeScript application that has grown organically and needs structural improvements.
+
+CURRENT PROBLEMS:
+- Large classes with multiple responsibilities
+- Tight coupling between components
+- No proper error handling
+- Missing type definitions
+- Inconsistent coding patterns
+- No dependency injection
+- Poor separation of concerns
+- Duplicate business logic
+
+REFACTORING OBJECTIVES:
+- Apply SOLID principles and clean architecture
+- Implement proper dependency injection
+- Create clear separation between layers (presentation, business, data)
+- Add comprehensive type definitions
+- Implement proper error handling strategy
+- Extract common utilities and services
+- Add comprehensive documentation
+- Make code more testable and maintainable
+
+[Insert complex TypeScript code here]
+
+Please provide a well-structured refactoring with proper architectural patterns.
+```
+
+### 3. Data Processing Script
+
+```
+This Python data processing script has become unmaintainable. Please refactor it for better structure and performance.
+
+CURRENT ISSUES:
+- Processing everything in memory without streaming
+- No error recovery or retry mechanisms
+- Mixed data validation and business logic
+- Hard-coded file paths and configurations
+- No progress tracking for long operations
+- Poor error messages and logging
+- No support for different data formats
+- Inefficient algorithms for large datasets
+
+REFACTORING NEEDS:
+- Implement streaming data processing
+- Add proper configuration management
+- Create modular data pipeline architecture
+- Implement error handling and retry logic
+- Add progress tracking and monitoring
+- Support multiple input/output formats
+- Optimize for performance and memory usage
+- Add comprehensive logging and debugging
+
+[Insert data processing code here]
+
+Focus on creating a robust, scalable data processing solution.
+```
+
+## Advanced Prompt Techniques
+
+### 1. Context-Aware Prompting
+
+```
+CONTEXT: This is part of a larger test automation framework used by a team of 15 developers. The code needs to integrate with existing CI/CD pipelines and follow established patterns.
+
+CONSTRAINTS:
+- Must use existing logging framework (custom logger module)
+- Cannot add new external dependencies without approval
+- Must maintain backward compatibility with v2.1 API
+- Performance requirements: <2 seconds for test suite initialization
+
+REQUIREMENTS:
+[Your specific requirements here]
+
+Please ensure the solution fits within these constraints and follows our established patterns.
+```
+
+### 2. Iterative Refinement Prompting
+
+```
+Phase 1: Create the basic structure and core functionality
+Phase 2: Add error handling and edge case management
+Phase 3: Optimize for performance and add monitoring
+Phase 4: Add comprehensive documentation and examples
+
+Start with Phase 1 and provide a solid foundation that can be built upon.
+```
+
+### 3. Quality-Focused Prompting
+
+```
+QUALITY REQUIREMENTS:
+- Code coverage: Minimum 90%
+- Cyclomatic complexity: Maximum 10 per function
+- Documentation: Comprehensive docstrings and type hints
+- Error handling: Graceful degradation and recovery
+- Performance: Sub-second response times
+- Security: Input validation and sanitization
+- Maintainability: Clear separation of concerns
+
+Ensure the generated code meets these quality standards.
+```
+
+## Tips for Effective Prompting
+
+### 1. Be Specific About Requirements
+- Define exact functionality needed
+- Specify input/output formats
+- Mention performance requirements
+- Include integration constraints
+
+### 2. Provide Context
+- Explain the larger system architecture
+- Mention team size and skill levels
+- Describe existing tools and frameworks
+- Include business requirements
+
+### 3. Set Quality Standards
+- Specify coding standards to follow
+- Define error handling expectations
+- Mention documentation requirements
+- Include testing expectations
+
+### 4. Use Examples
+- Provide sample inputs/outputs
+- Show desired code structure
+- Include integration examples
+- Demonstrate usage patterns
+
+### 5. Iterative Approach
+- Start with core functionality
+- Build complexity gradually
+- Refine based on feedback
+- Add features incrementally
